@@ -65,13 +65,12 @@ def led_off(pin):
 
 def run_motor(lux):
     if (lux > 100):
-        motorA_1_PWM.ChangeDutyCycle(100)
+        motorA_1_PWM.ChangeDutyCycle(0)
         led_on(LED)
         
     elif (lux < 100):
         motorA_1_PWM.ChangeDutyCycle(50)
         led_off(LED)
-    print("no_lux")
         
 def readData(sensor, pin):
     hum, temp = Adafruit_DHT.read_retry(sensor, pin)
